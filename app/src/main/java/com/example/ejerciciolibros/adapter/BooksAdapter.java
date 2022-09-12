@@ -1,6 +1,7 @@
 package com.example.ejerciciolibros.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.ejerciciolibros.BookDetailsActivity;
 import com.example.ejerciciolibros.R;
 import com.example.ejerciciolibros.model.Book;
 
@@ -27,6 +29,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> 
 
     public void reloadData(List<Book> books) {
         this.mBooks = books;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -64,7 +67,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> 
         return mBooks.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private ImageView mBookImage;
         private TextView mBookName;
@@ -76,6 +79,13 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> 
             mBookImage = (ImageView) itemView.findViewById(R.id.book_image);
             mBookName = (TextView) itemView.findViewById(R.id.book_name);
             mBookAuthor = (TextView) itemView.findViewById(R.id.book_author);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(view.getContext(), BookDetailsActivity.class);
+            view.getContext().startActivity(intent);
         }
     }
 }
