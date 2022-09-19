@@ -4,7 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.18667679837892603" />
-        <entry key="app/src/main/res/layout/activity_book_details.xml" value="0.11953339507614355" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2825" />
+        <entry key="app/src/main/res/layout/activity_book_details.xml" value="0.2759665005448936" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.26684570312499994" />
         <entry key="app/src/main/res/layout/item_book.xml" value="0.29393115942028986" />
       </map>
